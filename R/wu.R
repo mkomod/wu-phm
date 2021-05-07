@@ -5,6 +5,22 @@
 #' @param delta censoring indicator, 0: uncensored, 1: censored
 #' @param X design matrix
 #' @returns list with coefficient values and number of non-zero coefficients
+#' 
+#' @examples
+#' # Generate data
+#' set.seed(1)
+#' n <- 250; omega <- 1; censoring_lvl <- 0.4
+#' 
+#' b <- c(1, 1, rep(0, 250))
+#' p <- length(b)
+#' X <- matrix(rnorm(n * p), nrow=n)
+#' y <- runif(nrow(X))
+#' Y <- log(1 - y) / - (exp(X %*% b) * omega)
+#' 
+#' delta  <- runif(n) > censoring_lvl   # 0: censored, 1: uncensored
+#' Y[!delta] <- Y[!delta] * runif(sum(!delta))
+#' 
+#' fit <- wu.fit(Y, delta, X)
 #'
 #' @export
 wu.fit <- function(Y, delta, X) {
