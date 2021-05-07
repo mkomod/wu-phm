@@ -1,4 +1,11 @@
 
+#' Fit spike and slab Cox PHMs
+#'
+#' @param Y survival times
+#' @param delta censoring indicator, 0: uncensored, 1: censored
+#' @param X design matrix
+#' @returns list with coefficient values and number of non-zero coefficients
+#'
 #' @export
 wu.fit <- function(Y, delta, X) {
     y <- survival::Surv(as.matrix(Y), as.matrix(as.integer(delta)))
