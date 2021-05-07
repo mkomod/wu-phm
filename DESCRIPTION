@@ -1,11 +1,12 @@
-Package: survival.svb
+Package: wu.ss.phm
 Type: Package
-Title:
+Title: wu.phm
 Version: 1.0
 Date: 2021-03-13
 Author: Michael Komodromos
 Maintainer: Michael Komodromos <mk1019@ic.ac.uk>
-Description: 
-License: 
-Imports: Rcpp (>= 1.0.6)
-LinkingTo: Rcpp, RcppArmadillo
+Description: Implementatoin of Spike and Slab Cox PHM
+License: GPL3
+Depends: survival, glmnet, spikeslab
+Imports: survival, glmnet, spikeslab
+RoxygenNote: 7.1.1
