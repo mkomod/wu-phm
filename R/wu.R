@@ -71,7 +71,7 @@ risk_set <- function(Y, delta)
 
 
 #' @keywords internal
-lik_linear <- function(Y, delta, raw.x , b)
+lik_linear <- function(Y, delta, X , b)
 {
     n <- nrow(X); p <- ncol(X); b <- as.matrix(b)
 
